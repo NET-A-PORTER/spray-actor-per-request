@@ -99,7 +99,7 @@ request too many pets:
       "message": "PetOverflowException: OMG. Pets. Everywhere."
     }
 
-Any failures that not handled by the application core can be escalated up the the supervision strategy in our
+Any failures that not handled by the application core can be escalated up to the supervision strategy in our
 `PerRequest` actor. The `PerRequest` actor is too generic to recover from any business logic failures, so it will
 simply handle all failures by completing the request with an error response. Any request scoped actors in the
 application core are stopped by the `PerRequest` actor.
