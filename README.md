@@ -4,8 +4,9 @@ This project provides an example spray application that uses the Actor per reque
 
 Why would you want to spin up an Actor for each HTTP request?
 
- * Easily manage any request scoped Actors in the application core
+ * Easily manage a tree of request scoped Actors in the application core
   * The per request actor can clean them up in the event of a timeouts and failures
+  * Leverage the actor supervision hierarchy to propogate failures up to the RequestContext, so you can return useful error responses
  * Promote `Tell, Don't Ask`
   * Using request scoped Actors in the application core can make it easier to use tell (`!`) over ask (`?`)
 
