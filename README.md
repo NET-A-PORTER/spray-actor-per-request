@@ -12,7 +12,6 @@ Why would you want to spin up an Actor for each HTTP request?
 Resources:
 
  * Scala Exchange Presentation ([video](http://skillsmatter.com/podcast/scala/scala-does-the-catwalk))
-   ([slides](http://theon.github.io/scalax-catwalk/))
  * Mathias describes the actor per request approach against others.
    ([mailing list](https://groups.google.com/forum/#!msg/spray-user/5x9kba7j1FI/r_aaDTPWHFkJ))
 
