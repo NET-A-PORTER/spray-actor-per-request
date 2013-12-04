@@ -34,7 +34,7 @@ Our application is made up of three modules:
  * **Clients** - Our code to consume two existing services that provide us with a list of pets and a list of owners.
    These services could be databases, RESTful APIs, etc. It doesn't really matter for the purposes of this example.
 
-Ideally modules these would be in separate sub-projects to prevent compile time dependencies, however for simplicity
+Ideally modules these would be in separate sub-projects to prevent unnecessary compile time dependencies, however for simplicity
 purposes they are just kept in separate packages in this example.
 
 ### Running
