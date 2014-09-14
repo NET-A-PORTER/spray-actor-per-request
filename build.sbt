@@ -4,7 +4,7 @@ name := "spray-apr"
 
 version := "1.0"
 
-scalaVersion  := "2.10.0"
+scalaVersion  := "2.10.4"
 
 scalacOptions := Seq("-feature", "-unchecked", "-deprecation", "-encoding", "utf8")
 
