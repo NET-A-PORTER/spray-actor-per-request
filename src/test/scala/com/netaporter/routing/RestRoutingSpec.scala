@@ -10,7 +10,7 @@ class RestRoutingSpec extends FlatSpec with ScalatestRouteTest with Matchers {
 
   val petsWithOwnerService = TestProbe()
 
-	def restRouting = TestActorRef(new RestRouting() {
+  def restRouting = TestActorRef(new RestRouting() {
     override def petsWithOwner(message : RestMessage): Route =
       ctx => perRequest(ctx, petsWithOwnerService.ref, message)
   })
