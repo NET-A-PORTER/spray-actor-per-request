@@ -56,9 +56,4 @@ class GetPetsWithOwnersActor(petService: ActorRef, ownerService: ActorRef) exten
       val enrichedPets = (petSeq zip ownerSeq).map { case (pet, owner) => pet.withOwner(owner) }
       context.parent ! PetsWithOwners(enrichedPets)
     }
-
-  override val supervisorStrategy =
-    OneForOneStrategy() {
-      case _ => Escalate
-    }
 }
