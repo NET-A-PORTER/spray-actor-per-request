@@ -1,16 +1,16 @@
 package com.netaporter.routing
 
-import akka.actor._
 import akka.actor.SupervisorStrategy.Stop
-import spray.http.StatusCodes._
-import spray.routing.RequestContext
-import akka.actor.OneForOneStrategy
-import spray.httpx.Json4sSupport
-import scala.concurrent.duration._
-import org.json4s.DefaultFormats
-import spray.http.StatusCode
+import akka.actor.{OneForOneStrategy, _}
 import com.netaporter._
 import com.netaporter.routing.PerRequest._
+import org.json4s.DefaultFormats
+import spray.http.StatusCode
+import spray.http.StatusCodes._
+import spray.httpx.Json4sSupport
+import spray.routing.RequestContext
+
+import scala.concurrent.duration._
 
 trait PerRequest extends Actor with Json4sSupport {
 
@@ -38,10 +38,9 @@ trait PerRequest extends Actor with Json4sSupport {
 
   override val supervisorStrategy =
     OneForOneStrategy() {
-      case e => {
+      case e =>
         complete(InternalServerError, Error(e.getMessage))
         Stop
-      }
     }
 }
 

@@ -2,8 +2,8 @@ package com.netaporter.clients
 
 import akka.actor.Actor
 import com.netaporter._
-import com.netaporter.clients.PetClient._
 import com.netaporter.clients.OwnerClient._
+import com.netaporter.clients.PetClient._
 
 /**
  * This could be:
@@ -31,7 +31,7 @@ object PetClient {
  */
 class OwnerClient extends Actor {
   def receive = {
-    case GetOwnersForPets(petNames) => {
+    case GetOwnersForPets(petNames) =>
       val owners = petNames map {
         case "Lassie"        => Owner("Jeff Morrow")
         case "Brian Griffin" => Owner("Peter Griffin")
@@ -39,7 +39,6 @@ class OwnerClient extends Actor {
         case _               => Owner("Jeff") // Jeff has a lot of pets
       }
       sender ! OwnersForPets(owners)
-    }
   }
 }
 object OwnerClient {
