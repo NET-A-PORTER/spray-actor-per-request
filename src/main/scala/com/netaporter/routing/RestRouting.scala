@@ -1,14 +1,16 @@
 package com.netaporter.routing
 
-import akka.actor.{Props, Actor}
+import akka.actor.Props
 import com.netaporter._
-import spray.routing.{Route, HttpService}
-import com.netaporter.core.GetPetsWithOwnersActor
 import com.netaporter.clients.{OwnerClient, PetClient}
+import com.netaporter.core.GetPetsWithOwnersActor
+import spray.routing.{HttpServiceActor, Route}
 
-class RestRouting extends HttpService with Actor with PerRequestCreator {
+object RestRouting {
+  def props(): Props = Props(new RestRouting)
+}
 
-  implicit def actorRefFactory = context
+class RestRouting extends HttpServiceActor with PerRequestCreator {
 
   def receive = runRoute(route)
 

@@ -2,7 +2,7 @@ package com.netaporter.routing
 
 import akka.testkit.{TestActorRef, TestProbe}
 import com.netaporter._
-import org.scalatest.{Matchers, FlatSpec}
+import org.scalatest.{FlatSpec, Matchers}
 import spray.routing._
 import spray.testkit.ScalatestRouteTest
 
